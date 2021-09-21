@@ -1,4 +1,5 @@
-#[derive(Debug, Clone, Eq, PartialEq)]
+use serde_derive::*;
+#[derive(Debug, Clone, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Card {
     number: usize,
     color: Color,
@@ -20,7 +21,7 @@ impl PartialOrd for Card {
     }
 }
 
-#[derive(Debug, Copy, Clone, Eq, PartialEq)]
+#[derive(Debug, Copy, Clone, Eq, PartialEq, Serialize, Deserialize)]
 pub enum Color {
     Red,
     Blue,
